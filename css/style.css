@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  font-family: 'PT Serif', serif; }
+
+a {
+  color: white;
+  text-decoration: none; }
+
+.small {
+  height: 100px;
+  background-color: #303030;
+  animation-name: smallanim;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in; }
+@keyframes smallanim {
+  from {
+    background-color: rgba(48, 48, 48, 0);
+    height: 200px; }
+  to {
+    background-color: #303030;
+    height: 100px; } }
+  .small #logoside p {
+    font-size: 20px;
+    animation-name: logoPsmall;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in; }
+@keyframes logoPsmall {
+  from {
+    font-size: 30px; }
+  to {
+    font-size: 20px; } }
+  .small #menuside a p {
+    line-height: 100px;
+    font-size: 20px;
+    animation-name: menuPsmall;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in; }
+@keyframes menuPsmall {
+  from {
+    font-size: 30px;
+    line-height: 200px; }
+  to {
+    font-size: 20px;
+    line-height: 100px; } }
+.big {
+  height: 200px;
+  background-color: rgba(48, 48, 48, 0);
+  animation-name: biganim;
+  animation-duration: 0.1s;
+  animation-timing-function: ease-in; }
+@keyframes biganim {
+  from {
+    background-color: #303030;
+    height: 100px; }
+  to {
+    background-color: rgba(48, 48, 48, 0);
+    height: 200px; } }
+  .big #logoside p {
+    font-size: 30px;
+    animation-name: logoPbig;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in; }
+@keyframes logoPbig {
+  from {
+    font-size: 20px; }
+  to {
+    font-size: 30px; } }
+  .big #menuside a p {
+    line-height: 200px;
+    font-size: 30px;
+    animation-name: menuPbig;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in; }
+@keyframes menuPbig {
+  from {
+    font-size: 20px;
+    line-height: 100px; }
+  to {
+    font-size: 30px;
+    line-height: 200px; } }
+.mottohide {
+  opacity: 0;
+  animation-name: mottohide;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in; }
+@keyframes mottohide {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+.mottoshow {
+  opacity: 1;
+  animation-name: mottoshow;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in; }
+@keyframes mottoshow {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.secondtxtshow {
+  animation-name: secondtxtshow;
+  animation-duration: 0.6s;
+  animation-timing-function: linear; }
+@keyframes secondtxtshow {
+  from {
+    transform: translateX(40%);
+    opacity: 0; }
+  to {
+    transform: translateX(0%);
+    opacity: 1; } }
+.secondlogoshow {
+  animation-name: secondlogoshow;
+  animation-duration: 0.6s;
+  animation-timing-function: linear; }
+@keyframes secondlogoshow {
+  from {
+    transform: translateX(60%);
+    opacity: 0; }
+  to {
+    transform: translateX(-54%);
+    opacity: 1; } }
+.thirdtxtshow {
+  animation-name: thirdtxtshow;
+  animation-duration: 1s;
+  animation-timing-function: linear; }
+@keyframes thirdtxtshow {
+  from {
+    transform: translateX(-8%);
+    opacity: 0; }
+  to {
+    transform: translateX(0%);
+    opacity: 1; } }
+.fourthtxtshow {
+  animation-name: fourthtxtshow;
+  animation-duration: 0.6s;
+  animation-timing-function: linear; }
+@keyframes fourthtxtshow {
+  from {
+    transform: translateX(10%);
+    opacity: 0; }
+  to {
+    transform: translateX(0%);
+    opacity: 1; } }
+body {
+  overflow-x: hidden; }
+
+#content {
+  z-index: 2;
+  position: absolute;
+  margin-bottom: 100px; }
+
+.separator {
+  width: 60%;
+  height: 6px;
+  background-color: #d0b77b;
+  margin: auto;
+  opacity: 0; }
+
+#thirdseparator {
+  position: absolute;
+  bottom: 300px;
+  left: 50%;
+  transform: translatex(-50%);
+  opacity: 1; }
+
+nav {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 200px; }
+  nav #logoside {
+    height: 100%;
+    position: relative;
+    width: 30%;
+    float: left; }
+    nav #logoside p {
+      float: left;
+      color: #fff;
+      font-size: 30px;
+      width: 50%;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      position: relative;
+      top: 50%;
+      transform: translatey(-50%); }
+    nav #logoside img {
+      height: 100%;
+      position: relative;
+      float: left; }
+      nav #logoside img::after {
+        clear: both;
+        content: "";
+        display: table; }
+  nav #menuside {
+    width: 70%;
+    height: 100%;
+    float: left; }
+    nav #menuside::after {
+      clear: both;
+      content: "";
+      display: table; }
+    nav #menuside a {
+      color: #fff;
+      text-decoration: none;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 600;
+      position: relative; }
+      nav #menuside a p {
+        font-size: 40px;
+        width: 33%;
+        text-align: center;
+        line-height: 150px;
+        font-family: 'Roboto', sans-serif;
+        position: relative;
+        display: inline-block; }
+
+#movie {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden; }
+  #movie video {
+    height: auto;
+    position: absolute;
+    width: auto;
+    min-height: 100%;
+    min-width: 100%;
+    z-index: 1; }
+  #movie p {
+    position: absolute;
+    z-index: 2;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    width: 100%;
+    text-align: center; }
+
+#secondholder {
+  width: 100%;
+  height: 759px; }
+  #secondholder figure {
+    width: 50%;
+    height: 100%;
+    float: left;
+    position: relative;
+    background-image: url(../img/kitchen.jpg);
+    background-size: cover; }
+    #secondholder figure img {
+      height: 100%;
+      width: 100%; }
+  #secondholder #secondtxt {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    float: left;
+    z-index: 2;
+    background-color: white; }
+    #secondholder #secondtxt::after {
+      clear: both;
+      content: "";
+      display: table; }
+    #secondholder #secondtxt p {
+      height: 658px;
+      text-align: center;
+      display: table-cell;
+      vertical-align: middle;
+      font-size: 25px;
+      opacity: 0; }
+    #secondholder #secondtxt img {
+      height: 82px;
+      position: relative;
+      left: 50%;
+      transform: translatex(-50%);
+      top: 10px;
+      opacity: 0; }
+
+#thirdholder {
+  width: 100%;
+  height: 760px;
+  position: relative;
+  background-color: #f8dcc1; }
+  #thirdholder p {
+    text-align: center;
+    position: relative;
+    line-height: 760px;
+    font-size: 35px;
+    opacity: 0; }
+
+#fourthholder {
+  width: 100%;
+  height: 760px;
+  background-color: white; }
+  #fourthholder figure {
+    width: 30%;
+    height: 100%;
+    float: left;
+    position: relative;
+    background-image: url(../img/food.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; }
+  #fourthholder #fourthtext {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    float: left; }
+    #fourthholder #fourthtext p {
+      height: 377px;
+      line-height: 377px;
+      position: relative;
+      text-align: center;
+      font-size: 23px;
+      opacity: 0; }
+    #fourthholder #fourthtext p:last-of-type {
+      height: 377px;
+      line-height: 377px;
+      position: relative;
+      text-align: center;
+      font-size: 20px;
+      opacity: 0; }
+
+#fifthholder {
+  background-image: url(../img/miseczki.jpg);
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  background-attachment: fixed; }
+
+#sixthholder {
+  width: 100%;
+  height: 760px;
+  position: relative;
+  background-color: #424241; }
+  #sixthholder #map {
+    position: relative;
+    width: 30%;
+    height: 100%;
+    float: left; }
+  #sixthholder #sixthtext {
+    width: 70%;
+    float: left;
+    position: relative;
+    top: 50%;
+    transform: translatey(-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 35px; }
+    #sixthholder #sixthtext::after {
+      clear: both;
+      content: "";
+      display: table; }
+
+footer {
+  height: 100px;
+  position: fixed;
+  background-color: #303030;
+  bottom: 0;
+  width: 100%;
+  z-index: 1; }
+  footer #footerholder {
+    height: 100%;
+    width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%); }
+    footer #footerholder img {
+      height: 100%;
+      float: left; }
+    footer #footerholder p {
+      float: left;
+      line-height: 100px; }
+      footer #footerholder p::after {
+        clear: both;
+        content: "";
+        display: table; }
+
+/*# sourceMappingURL=style.css.map */

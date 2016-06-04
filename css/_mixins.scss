@@ -1,0 +1,192 @@
+@mixin center(){
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin centerh(){
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+@mixin centerw(){
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+@mixin biganim(){
+    @keyframes biganim {
+        from {  
+            background-color: rgba(48,48,48,1);
+            height: 100px;
+
+
+        }
+        to {
+            background-color: rgba(48,48,48,0);
+            height: 200px;
+        }
+    }
+}
+
+@mixin smallanim(){
+    @keyframes smallanim {
+        from {  
+            background-color: rgba(48,48,48,0);
+            height: 200px;
+
+
+        }
+        to {
+            background-color: rgba(48,48,48,1);
+            height: 100px;
+        }
+    }
+}
+
+@mixin menuPsmall(){
+    @keyframes menuPsmall {
+        from {  
+            font-size: 30px;
+            line-height: 200px;
+
+
+        }
+        to {
+            font-size: 20px;
+            line-height: 100px;
+        }
+    }
+}
+
+@mixin logoPsmall(){
+    @keyframes logoPsmall {
+        from {  
+            font-size: 30px;
+
+
+
+        }
+        to {
+            font-size: 20px;
+
+        }
+    }
+}
+
+@mixin menuPbig(){
+    @keyframes menuPbig {
+        from {  
+            font-size: 20px;
+            line-height: 100px;
+
+
+        }
+        to {
+            font-size: 30px;
+            line-height: 200px;
+        }
+    }
+}
+
+@mixin logoPbig(){
+    @keyframes logoPbig {
+        from {  
+            font-size: 20px;
+
+
+
+        }
+        to {
+            font-size: 30px;
+
+        }
+    }
+}
+
+@mixin mottohide(){
+    @keyframes mottohide {
+        from {  
+            opacity:1;
+
+
+
+        }
+        to {
+            opacity:0;
+
+        }
+    }
+}
+
+@mixin mottoshow(){
+    @keyframes mottoshow {
+        from {  
+            opacity:0;
+
+
+
+        }
+        to {
+            opacity:1;
+
+        }
+    }
+}
+
+
+@mixin secondtxtshow(){
+    @keyframes secondtxtshow {
+        from {  
+            transform: translateX(40%);
+            opacity: 0;
+
+        }
+        to {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin secondlogoshow(){
+    @keyframes secondlogoshow {
+        from {  
+            transform: translateX(60%);
+            opacity: 0;
+
+        }
+        to {
+            transform: translateX(-54%);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin thirdtxtshow(){
+    @keyframes thirdtxtshow {
+        from {  
+            transform: translateX(-8%);
+            opacity: 0;
+
+        }
+        to {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+}
+
+@mixin fourthtxtshow(){
+    @keyframes fourthtxtshow {
+        from {  
+            transform: translateX(10%);
+            opacity: 0;
+
+        }
+        to {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    }
+}

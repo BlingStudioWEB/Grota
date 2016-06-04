@@ -1,0 +1,419 @@
+@import "mixins";
+@import "../bourbon/bourbon";
+
+*{
+    margin: 0;
+    font-family: 'PT Serif', serif;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+//JS CLASSES
+
+.small{
+    height: 100px;
+    background-color: rgba(48,48,48,1);
+    @include smallanim();
+    animation-name: smallanim;
+    animation-duration: 0.2s;
+    animation-timing-function: ease-in;
+    
+    #logoside {
+    
+        p{
+
+            font-size: 20px;
+            @include logoPsmall();
+            animation-name: logoPsmall;
+            animation-duration: 0.2s;
+            animation-timing-function: ease-in;
+        }
+    }
+    
+    #menuside {
+	
+        a{
+            p{
+                line-height: 100px;
+                font-size: 20px;
+                @include menuPsmall();
+                animation-name: menuPsmall;
+                animation-duration: 0.2s;
+                animation-timing-function: ease-in;
+                
+            }
+        }
+    }
+    
+}
+
+.big{
+    height: 200px;
+    background-color: rgba(48,48,48,0);
+    @include biganim();
+    animation-name: biganim;
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in;
+    
+    #logoside {
+    
+        p{
+
+            font-size: 30px;
+            @include logoPbig();
+            animation-name: logoPbig;
+            animation-duration: 0.1s;
+            animation-timing-function: ease-in;
+        }
+    }
+    
+    #menuside {
+	
+        a{
+            p{
+                line-height: 200px;
+                font-size: 30px;
+                @include menuPbig();
+                animation-name: menuPbig;
+                animation-duration: 0.1s;
+                animation-timing-function: ease-in;
+            }
+        }
+    }
+    
+}
+
+.mottohide{
+    opacity: 0;
+    @include mottohide;
+    animation-name: mottohide;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in;
+}
+
+.mottoshow{
+    opacity: 1;
+    @include mottoshow;
+    animation-name: mottoshow;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in;
+}
+
+.secondtxtshow{
+    @include secondtxtshow;
+    animation-name: secondtxtshow;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+
+.secondlogoshow{
+    @include secondlogoshow;
+    animation-name: secondlogoshow;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+
+.thirdtxtshow{
+    @include thirdtxtshow;
+    animation-name: thirdtxtshow;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+
+.fourthtxtshow{
+    @include fourthtxtshow;
+    animation-name: fourthtxtshow;
+    animation-duration: 0.6s;
+    animation-timing-function: linear;
+}
+
+//REST
+body{
+    overflow-x: hidden;
+    
+}
+
+#content{
+    z-index: 2;
+    position: absolute;
+    margin-bottom: 100px;
+}
+
+.separator{
+    width: 60%;
+    height: 6px;
+    background-color: #d0b77b;
+    margin: auto;
+    opacity: 0;
+        
+}
+
+#thirdseparator{
+    position: absolute;
+    bottom: 300px;
+    @include centerw();
+    opacity: 1;
+}
+
+nav{
+    z-index: 999;
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    
+    
+    #logoside{
+        height: 100%;
+        position: relative;
+        width: 30%;
+        float: left;
+        
+        p{
+            float: left;
+            color: #fff;
+            font-size: 30px;
+            width: 50%;
+            text-align: center;
+            font-family: 'Roboto', sans-serif; 
+            font-weight: 600;
+            position: relative;
+            @include centerh;
+
+            
+        }
+        
+        img{
+            height: 100%;
+            position: relative;
+            float: left;
+            @include clearfix;
+        }
+    }
+    
+    #menuside{
+        width: 70%;
+        height: 100%;
+        float: left;
+        @include clearfix;
+        
+        a{
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif; 
+            font-weight:600;
+            position: relative;
+            
+            p{
+                font-size: 40px;
+                width: 33%;
+                text-align: center;
+                line-height: 150px;
+                font-family: 'Roboto', sans-serif; 
+                position: relative;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+#movie{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+    video{
+        height: auto;
+        position: absolute;
+        width: auto;
+        min-height: 100%;
+        min-width: 100%;
+        z-index: 1;
+        
+    }
+    
+    p{
+        position: absolute;
+        z-index: 2;
+        font-family: 'Roboto', sans-serif; 
+        color: white;
+        @include center;
+        font-size: 80px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+#secondholder{
+    width: 100%;
+    height: 759px;
+    
+    figure{
+        width: 50%;
+        height: 100%;
+        float: left;
+        position: relative;
+        background-image: url(../img/kitchen.jpg);
+        background-size: cover;
+
+        
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    
+    #secondtxt{
+        width: 50%;
+        height: 100%;
+        position: relative;
+        float: left;
+        @include clearfix;
+        z-index: 2;
+        background-color: white;
+        
+        
+        p{
+            height: 658px;
+            text-align: center;
+            display: table-cell; 
+            vertical-align: middle;
+            font-size: 25px;
+            opacity: 0;
+            
+        }
+        
+        
+        img{
+            height: 82px;
+            position: relative;
+            @include centerw;
+            top: 10px;
+            opacity: 0;
+        }
+    }
+}
+
+#thirdholder{
+    width: 100%;
+    height: 760px;
+    position: relative;
+    background-color: #f8dcc1;
+    
+    
+    p{
+        text-align: center;
+        position: relative;
+        line-height: 760px;
+        font-size: 35px;
+        opacity: 0;
+    }
+}
+
+#fourthholder{
+    width: 100%;
+    height: 760px;
+    background-color: white;
+    
+    figure{
+        width: 30%;
+        height: 100%;
+        float: left;
+        position: relative;
+        background-image: url(../img/food.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    #fourthtext{
+        width: 70%;
+        height: 100%;
+        position: relative;
+        float: left;
+        
+        p{
+            height: 377px;
+            line-height: 377px;
+            position: relative;
+            text-align: center;
+            font-size: 23px;
+            opacity: 0;
+        }
+        
+        p:last-of-type{
+            height: 377px;
+            line-height: 377px;
+            position: relative;
+            text-align: center;
+            font-size: 20px;
+            opacity: 0;
+        }
+        
+    }
+    
+}
+
+#fifthholder{
+    background-image: url(../img/miseczki.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    background-attachment: fixed;
+    
+    
+}
+
+#sixthholder{
+    width: 100%;
+    height: 760px;
+    position: relative;
+    background-color: #424241;
+    
+    #map{
+        position: relative;
+        width: 30%;
+        height: 100%;
+        float: left;
+    }
+    
+    #sixthtext{
+        width: 70%;
+        float: left;
+        @include clearfix;
+        position: relative;
+        @include centerh;
+        text-align: center; 
+        color: #fff;
+        font-size: 35px;
+    }
+}
+
+footer{
+    height: 100px;
+    position: fixed;
+    background-color: rgba(48,48,48,1);
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    
+    #footerholder{
+        height: 100%;
+        width: 500px;
+        position: relative;
+        @include centerw;
+
+        img{
+            height: 100%;
+            float: left;
+        }
+        
+        p{
+            float: left;
+            @include clearfix;
+            line-height: 100px;
+        }
+    }
+}
