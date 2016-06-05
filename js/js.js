@@ -5,6 +5,9 @@ $(function() {
     var secondtxtP= $("#secondtxt p");
     var secondtxtSep= $("#secondtxt .separator");
     var secondtxtImg= $("#secondtxt img");
+    var secondholder= $("#secondholder");
+    var thirdholder= $("#thirdholder");
+    var fourthholder= $("#fourthholder");
     //Vars
     var vh = $(window).height();
     
@@ -39,13 +42,13 @@ $(function() {
             $(movieP).addClass("mottoshow").removeClass("mottohide");
         };
         
-        if($("#secondholder").offset().top - vh / 2<scroll){
+        if($(secondholder).offset().top - vh / 2<scroll){
             setTimeout(function (){
                     $(secondtxtP).addClass("secondtxtshow").css("opacity","1");
             }, 0);   
         }
         
-        if($("#secondholder").offset().top - vh / 3 <scroll){
+        if($(secondholder).offset().top - vh / 3 <scroll){
             
                     $(secondtxtSep).addClass("secondtxtshow").css("opacity","1");
                     $(secondtxtImg).addClass("secondlogoshow").css("opacity","1");
@@ -53,25 +56,25 @@ $(function() {
         }
 
         
-        if($("#thirdholder").offset().top - vh / 2<scroll){
+        if($(thirdholder).offset().top - vh / 2<scroll){
             
                     $("#thirdholder p").addClass("thirdtxtshow").css("opacity","1");
              
         }
         
-        if($("#fourthholder").offset().top - vh / 1.5<scroll){
+        if($(fourthholder).offset().top - vh / 1.5<scroll){
             
                     $("#fourthtext p:first-of-type").addClass("fourthtxtshow").css("opacity","1");
              
         }
         
-        if($("#fourthholder").offset().top - vh / 2<scroll){
+        if($(fourthholder).offset().top - vh / 2<scroll){
             
                     $("#fourthtext .separator").addClass("fourthtxtshow").css("opacity","1");
              
         }
         
-        if($("#fourthholder").offset().top - vh / 2.5<scroll){
+        if($(fourthholder).offset().top - vh / 2.5<scroll){
             
                     $("#fourthtext p:last-of-type").addClass("fourthtxtshow").css("opacity","1");
              
