@@ -382,6 +382,7 @@ nav{
     
     #sixthtext{
         width: 70%;
+        height: 100%;
         float: left;
         @include clearfix;
         position: relative;
@@ -391,6 +392,66 @@ nav{
         font-size: 35px;
         font-family: 'Roboto', sans-serif; 
         font-weight: 400;
+        
+            #pbox{
+                @include centerh;
+                position: relative;
+                width: 50%;
+                text-align: center; 
+                color: #fff;
+                font-size: 35px;
+                font-family: 'Roboto', sans-serif; 
+                font-weight: 400;
+                float: left;
+                p{
+                    width: 80%;
+                    position: relative;
+                    @include centerw;
+                    font-size: 50px;
+                }
+                
+                
+            }
+        
+        #space{
+            width: 2%;
+            max-width: 10px;
+            height: 80%;
+            float: left;
+            background-color: #d0b77b;
+            position: relative;
+            @include centerh;
+        }
+        
+        form{
+            width: 48%;
+            height: 100%;
+            float: left;
+            @include clearfix;
+            
+            p{
+                margin-top: 200px;
+            }
+            
+            input, textarea{
+                
+                width: 60%;
+                
+            }
+            
+            textarea{
+                margin-top: 30px;
+            }
+            
+            input:first-of-type{
+                margin-top: 80px;
+            }
+            
+            input:last-of-type{
+                width: 20%;
+                height: 30px;
+            }
+        }
     }
 }
 

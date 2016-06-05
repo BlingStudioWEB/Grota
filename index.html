@@ -142,9 +142,27 @@
                     </div>
 
                     <div id="sixthtext">
-                        <p>Restauracja Grota</p><br>
-                        <p>ul. 9 Maja 58C</p><br>
-                        <p>41-935 Bytom</p><br>
+                        
+                        <form action="send.php" method="post">
+                            
+                            <p>Skontaktuj się z nami!</p>
+                            
+                            <input type="text" placeholder="Imię i nazwisko" required="required"> <br>
+                            <input type="tel" maxlength="12" placeholder="Numer telefonu" required="required"> <br>
+                            <input type="email" placeholder="E-mail" required="required"> <br>
+                            <textarea rows="5" columns="10" name="contact_body" placeholder="Treść wiadomości"  required="required" tabindex="3"></textarea><br>
+                            <input type="submit" value="Wyślij">
+                        
+                        </form>
+                        
+                        <div id="space"></div>        
+                
+                        <div id="pbox">
+                            <p>Restauracja Grota</p><br>
+                            <p>ul. 9 Maja 58C</p><br>
+                            <p>41-935 Bytom</p><br>
+                        </div>
+                        
                     </div> 
 
                 </article>

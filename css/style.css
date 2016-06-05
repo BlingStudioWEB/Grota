@@ -344,6 +344,7 @@ nav {
     float: left; }
   #sixthholder #sixthtext {
     width: 70%;
+    height: 100%;
     float: left;
     position: relative;
     top: 50%;
@@ -357,6 +358,51 @@ nav {
       clear: both;
       content: "";
       display: table; }
+    #sixthholder #sixthtext #pbox {
+      top: 50%;
+      transform: translatey(-50%);
+      position: relative;
+      width: 50%;
+      text-align: center;
+      color: #fff;
+      font-size: 35px;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      float: left; }
+      #sixthholder #sixthtext #pbox p {
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translatex(-50%);
+        font-size: 50px; }
+    #sixthholder #sixthtext #space {
+      width: 2%;
+      max-width: 10px;
+      height: 80%;
+      float: left;
+      background-color: #d0b77b;
+      position: relative;
+      top: 50%;
+      transform: translatey(-50%); }
+    #sixthholder #sixthtext form {
+      width: 48%;
+      height: 100%;
+      float: left; }
+      #sixthholder #sixthtext form::after {
+        clear: both;
+        content: "";
+        display: table; }
+      #sixthholder #sixthtext form p {
+        margin-top: 200px; }
+      #sixthholder #sixthtext form input, #sixthholder #sixthtext form textarea {
+        width: 60%; }
+      #sixthholder #sixthtext form textarea {
+        margin-top: 30px; }
+      #sixthholder #sixthtext form input:first-of-type {
+        margin-top: 80px; }
+      #sixthholder #sixthtext form input:last-of-type {
+        width: 20%;
+        height: 30px; }
 
 footer {
   height: 100px;
