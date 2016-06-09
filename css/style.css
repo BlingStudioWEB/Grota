@@ -384,25 +384,30 @@ nav {
       position: relative;
       top: 50%;
       transform: translatey(-50%); }
-    #sixthholder #sixthtext form {
+    #sixthholder #sixthtext #centerform {
+      float: left;
       width: 48%;
       height: 100%;
-      float: left; }
-      #sixthholder #sixthtext form::after {
+      position: relative; }
+      #sixthholder #sixthtext #centerform::after {
         clear: both;
         content: "";
         display: table; }
-      #sixthholder #sixthtext form p {
-        margin-top: 200px; }
-      #sixthholder #sixthtext form input, #sixthholder #sixthtext form textarea {
-        width: 60%; }
-      #sixthholder #sixthtext form textarea {
-        margin-top: 30px; }
-      #sixthholder #sixthtext form input:first-of-type {
-        margin-top: 80px; }
-      #sixthholder #sixthtext form input:last-of-type {
-        width: 20%;
-        height: 30px; }
+      #sixthholder #sixthtext #centerform form {
+        width: 100%;
+        height: auto;
+        top: 50%;
+        transform: translatey(-50%);
+        position: absolute; }
+        #sixthholder #sixthtext #centerform form p {
+          margin-top: 200px; }
+        #sixthholder #sixthtext #centerform form input, #sixthholder #sixthtext #centerform form textarea {
+          width: 60%; }
+        #sixthholder #sixthtext #centerform form input:last-of-type {
+          width: 20%;
+          height: 30px; }
+        #sixthholder #sixthtext #centerform form textarea {
+          margin-top: 50px; }
 
 footer {
   height: 100px;
@@ -429,5 +434,38 @@ footer {
         clear: both;
         content: "";
         display: table; }
+
+@media all and (max-width: 1440px) {
+  #content #thirdholder p {
+    font-size: 31px; } }
+@media all and (max-width: 1426px) {
+  #content #logoside p {
+    font-size: 25px;
+    width: 25%; }
+  #content #menuside a p {
+    font-size: 20px;
+    width: 22.7%; }
+  #content #secondholder #secondtxt p {
+    font-size: 20px; }
+  #content #movie p {
+    font-size: 60px; }
+  #content #thirdholder p {
+    font-size: 30px; } }
+@media all and (max-width: 1280px) {
+  #content #thirdholder p {
+    font-size: 25px; } }
+@media all and (max-width: 1024px) {
+  #content #logoside p {
+    font-size: 20px;
+    width: 12.5%; }
+  #content #menuside a p {
+    font-size: 15px;
+    width: 23%; }
+  #content #secondholder #secondtxt p {
+    font-size: 20px; }
+  #content #movie p {
+    font-size: 60px; }
+  #content #thirdholder p {
+    font-size: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -423,34 +423,36 @@ nav{
             @include centerh;
         }
         
-        form{
-            width: 48%;
-            height: 100%;
+        #centerform{
             float: left;
             @include clearfix;
+            width: 48%;
+            height: 100%;
+            position: relative;
+            
+            form{
+                width: 100%;
+                height: auto;
+                @include centerh;
+                position: absolute;
             
             p{
                 margin-top: 200px;
             }
             
             input, textarea{
-                
                 width: 60%;
                 
             }
-            
-            textarea{
-                margin-top: 30px;
-            }
-            
-            input:first-of-type{
-                margin-top: 80px;
-            }
-            
+
             input:last-of-type{
                 width: 20%;
                 height: 30px;
             }
+                textarea{
+                    margin-top: 50px;
+                }
+        }
         }
     }
 }
@@ -480,6 +482,113 @@ footer{
             line-height: 100px;
             font-family: 'Roboto', sans-serif; 
             font-weight: 400;
+        }
+    }
+}
+//SKURWIBLE RESPONSIBLE
+
+@media all and (max-width: 1440px){
+    
+    
+    #content{
+          #thirdholder{
+            p{
+                font-size: 31px;
+
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1426px){
+    
+    
+    #content{
+        #logoside{
+            p{
+                font-size: 25px;
+                width: 25%;
+            }
+        }
+        #menuside{
+            a{
+            
+                p{
+                font-size: 20px; 
+                width: 22.7%;
+                }
+            }
+        }
+        #secondholder{
+            #secondtxt{
+                p{
+                    font-size: 20px;
+                }
+                
+            }
+        }
+        #movie{
+            p{
+                font-size: 60px;
+            }
+        }
+          #thirdholder{
+            p{
+                font-size: 30px;
+
+            }
+        }
+    }
+}
+@media all and (max-width: 1280px){
+    
+    
+    #content{
+          #thirdholder{
+            p{
+                font-size: 25px;
+
+            }
+        }
+    }
+}
+@media all and (max-width: 1024px){
+    
+    
+    #content{
+        #logoside{
+            p{
+                font-size: 20px;
+                width: 12.5%;
+            }
+        }
+        #menuside{
+            a{
+            
+                p{
+                font-size: 15px; 
+                width: 23%;
+                }
+            }
+        }
+        #secondholder{
+            #secondtxt{
+                p{
+                    font-size: 20px;
+                }
+                
+            }
+        }
+        #movie{
+            p{
+                font-size: 60px;
+            }
+        }
+          #thirdholder{
+            p{
+                font-size: 20px;
+
+            }
         }
     }
 }
