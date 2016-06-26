@@ -3,7 +3,7 @@
 
 *{
     margin: 0;
-    
+    @include transition(all 0.5s ease-in-out);
 }
 
 a{
@@ -16,20 +16,14 @@ a{
 .small{
     height: 100px;
     background-color: rgba(48,48,48,1);
-    @include smallanim();
-    animation-name: smallanim;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in;
+    @include transition(all 0.2s ease-in-out);
     
     #logoside {
     
         p{
 
             font-size: 20px;
-            @include logoPsmall();
-            animation-name: logoPsmall;
-            animation-duration: 0.2s;
-            animation-timing-function: ease-in;
+            @include transition(all 0.2s ease-in-out);
         }
     }
     
@@ -39,10 +33,7 @@ a{
             p{
                 line-height: 100px;
                 font-size: 20px;
-                @include menuPsmall();
-                animation-name: menuPsmall;
-                animation-duration: 0.2s;
-                animation-timing-function: ease-in;
+                @include transition(all 0.2s ease-in-out);
                 
             }
         }
@@ -53,20 +44,14 @@ a{
 .big{
     height: 200px;
     background-color: rgba(48,48,48,0);
-    @include biganim();
-    animation-name: biganim;
-    animation-duration: 0.1s;
-    animation-timing-function: ease-in;
+    @include transition(all 0.2s ease-in-out);
     
     #logoside {
     
         p{
 
             font-size: 30px;
-            @include logoPbig();
-            animation-name: logoPbig;
-            animation-duration: 0.1s;
-            animation-timing-function: ease-in;
+            @include transition(all 0.1s ease-in-out);
         }
     }
     
@@ -76,10 +61,7 @@ a{
             p{
                 line-height: 200px;
                 font-size: 30px;
-                @include menuPbig();
-                animation-name: menuPbig;
-                animation-duration: 0.1s;
-                animation-timing-function: ease-in;
+                @include transition(all 0.1s ease-in-out);
             }
         }
     }
@@ -130,16 +112,36 @@ a{
     animation-timing-function: linear;
 }
 
+.formanim{
+    @include formanim;
+    animation-name: formanim;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+}
+.loading{
+    @include loading;
+    animation-name: loading;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+}
+
 //REST
 body{
     overflow-x: hidden;
-    
+    width: 100%;
 }
 
+.holder{
+    width: 100%;
+    height: 760px;
+    position: relative;
+}
 #content{
     z-index: 2;
     position: absolute;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .separator{
@@ -163,8 +165,7 @@ nav{
     position: fixed;
     width: 100%;
     height: 200px;
-    
-    
+
     #logoside{
         height: 100%;
         position: relative;
@@ -181,15 +182,20 @@ nav{
             font-weight: 600;
             position: relative;
             @include centerh;
+            @include clearfix;
 
             
         }
         
         img{
-            height: 100%;
+            width: auto;
+            height: auto;
+            @include centerh;
             position: relative;
             float: left;
-            @include clearfix;
+            max-height: 100%;
+            max-width: 50%;
+
         }
     }
     
@@ -202,36 +208,35 @@ nav{
         a{
             color: #fff;
             text-decoration: none;
-            font-family: 'Roboto', sans-serif; 
-            font-weight:600;
-            position: relative;
+
             
             p{
                 font-size: 40px;
-                width: 24.7%;
+                width: 25%;
                 text-align: center;
                 line-height: 150px;
                 font-family: 'Roboto', sans-serif; 
+                font-weight: 600;
                 position: relative;
-                display: inline-block;
+                float: left;
+                @include clearfix;
             }
         }
     }
 }
 
 #movie{
-    width: 100vw;
     height: 100vh;
+    width: 100%;
     position: relative;
-    overflow: hidden;
     
     video{
         height: auto;
         position: absolute;
+        @include center;
         width: auto;
         min-height: 100%;
         min-width: 100%;
-        z-index: 1;
         
     }
     
@@ -242,15 +247,12 @@ nav{
         color: white;
         @include center;
         font-size: 80px;
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
 }
 
 #secondholder{
-    width: 100%;
-    height: 759px;
-    
     figure{
         width: 50%;
         height: 100%;
@@ -258,12 +260,6 @@ nav{
         position: relative;
         background-image: url(../img/kitchen.jpg);
         background-size: cover;
-
-        
-        img{
-            height: 100%;
-            width: 100%;
-        }
     }
     
     #secondtxt{
@@ -273,18 +269,20 @@ nav{
         float: left;
         @include clearfix;
         z-index: 2;
-        background-color: white;
+        background-color: #f8dcc1;
         
         
         p{
             padding-top: 300px;
-            font-family: 'PT Serif', serif;
+            font-family: 'Croissant One';
             height: 200px;
             text-align: center;
             display: table-cell; 
             vertical-align: middle;
-            font-size: 25px;
+            font-size: 32px;
             opacity: 0;
+            color: black;
+
             
         }
         
@@ -300,26 +298,22 @@ nav{
 }
 
 #thirdholder{
-    width: 100%;
-    height: 760px;
-    position: relative;
-    background-color: #f8dcc1;
+    background-color: #271515;
     
     
     p{
         text-align: center;
         position: relative;
         line-height: 760px;
-        font-size: 35px;
+        font-size: 39px;
         opacity: 0;
         font-family: 'PT Serif', serif;
+        color: white;
     }
 }
 
 #fourthholder{
-    width: 100%;
-    height: 760px;
-    background-color: white;
+    background-color: #f8dcc1;
     
     figure{
         width: 30%;
@@ -344,10 +338,11 @@ nav{
             vertical-align: middle;
             position: relative;
             text-align: center;
-            font-size: 23px;
+            font-size: 35px;
             opacity: 0;
             padding-left: 5%;
             padding-right: 5%;
+            color: black;
         } 
         
         p:first-of-type{
@@ -360,7 +355,6 @@ nav{
 #fifthholder{
     background-image: url(../img/miseczki.jpg);
     background-size: cover;
-    width: 100%;
     height: 600px;
     background-attachment: fixed;
     font-family: 'PT Serif', serif;
@@ -368,9 +362,6 @@ nav{
 }
 
 #sixthholder{
-    width: 100%;
-    height: 760px;
-    position: relative;
     background-color: #424241;
     
     #map{
@@ -430,35 +421,75 @@ nav{
             height: 100%;
             position: relative;
             
-            form{
-                width: 100%;
-                height: auto;
-                @include centerh;
+            h2{
                 position: absolute;
+                @include center;
+                font-size: 30px;
+                            }
             
-            p{
-                margin-top: 200px;
-            }
+            #form{
+                width: 70%;
+                height: auto;
+                @include center;
+                position: absolute;
+                font-family: 'Roboto', sans-serif;
             
-            input, textarea{
-                width: 60%;
-                
-            }
-
-            input:last-of-type{
-                width: 20%;
-                height: 30px;
-            }
-                textarea{
-                    margin-top: 50px;
+                h4{
+                    color: yellow;
+                    margin-bottom: 10px;
+                    font-size: 20px;
                 }
-        }
+                
+                .input-group:last-of-type{
+                    height: 100px;
+                }
+                .input-group{
+                    margin-bottom: 10px;
+                    height: 40px;
+                    background-color: #363636;
+                    overflow: hidden;
+                    border-radius: 10px 0 0 10px;
+
+
+                    input, textarea, input:focus, textarea:focus{
+                        width: 87%;
+                        margin-left: 2%;
+                        float: left;
+                        position: relative;
+                        @include centerh;
+                        @include clearfix;
+                        background-color: #363636;
+                        border: 0;
+                        color:#969696;
+                        resize: none;
+                        outline: none;
+                    }
+
+                    span{
+                        width: 10%;
+                        height: 100%;
+                        position: relative;
+                        float: left;
+                        background-color: #303030;
+                    }
+
+                }
+
+                #submit{
+                    width: 100%;
+                    border: 0;
+                    height: 40px;
+                    background-color: #363636;
+                    color: #969696;
+                }
+
+            }
         }
     }
 }
 
 footer{
-    height: 100px;
+    height: 70px;
     position: fixed;
     background-color: rgba(48,48,48,1);
     bottom: 0;
@@ -467,71 +498,85 @@ footer{
     
     #footerholder{
         height: 100%;
-        width: 500px;
+        width: 600px;
         position: relative;
-        @include centerw;
+        float: left;
+        @include centerw();
+
 
         img{
-            height: 100%;
+            height: 90%;
             float: left;
         }
         
         p{
             float: left;
             @include clearfix;
-            line-height: 100px;
+            line-height: 75px;
             font-family: 'Roboto', sans-serif; 
             font-weight: 400;
+
         }
     }
+
+}
+#wrapper{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 9999;
+    background-color: rgba(38, 38, 36, 0.9);
+
+
+    figure{
+        position: absolute;
+        @include center;
+         width: 60%;
+        img{
+              width: 100%;
+            }
+        i{
+            color: white;
+            position: absolute;
+            right: 0;
+            font-size: 20px;
+
+        }
+     }
+}
+#wrappercolor{
+    background-color: rgba(38, 38, 36, 0.9);
+    z-index: 9999;
+    position: absolute;
 }
 //SKURWIBLE RESPONSIBLE
 
-@media all and (max-width: 1440px){
+@media all and (max-width: 1720px){
     
     
     #content{
+
           #thirdholder{
             p{
-                font-size: 31px;
+                font-size: 35px;
 
             }
         }
     }
 }
 
-@media all and (max-width: 1426px){
+@media all and (max-width: 1520px){
     
     
     #content{
-        #logoside{
-            p{
-                font-size: 25px;
-                width: 25%;
-            }
-        }
-        #menuside{
-            a{
-            
-                p{
-                font-size: 20px; 
-                width: 22.7%;
+            #secondholder {
+	           #secondtxt {
+                   p{
+                       font-size: 29px;
+                   }
                 }
             }
-        }
-        #secondholder{
-            #secondtxt{
-                p{
-                    font-size: 20px;
-                }
-                
-            }
-        }
-        #movie{
-            p{
-                font-size: 60px;
-            }
-        }
           #thirdholder{
             p{
                 font-size: 30px;
@@ -540,55 +585,301 @@ footer{
         }
     }
 }
-@media all and (max-width: 1280px){
-    
-    
-    #content{
-          #thirdholder{
+
+
+@media all and (max-width: 1450px){
+    .big{
+        #logoside {
+
             p{
                 font-size: 25px;
+            }
+        }
 
-            }
-        }
-    }
-}
-@media all and (max-width: 1024px){
-    
-    
-    #content{
-        #logoside{
-            p{
-                font-size: 20px;
-                width: 12.5%;
-            }
-        }
-        #menuside{
+        #menuside {
+
             a{
-            
                 p{
-                font-size: 15px; 
-                width: 23%;
+                    font-size: 25px;
                 }
             }
         }
-        #secondholder{
-            #secondtxt{
+
+    }
+    .small{
+        #logoside {
+
+            p{
+                font-size: 20px;
+            }
+        }
+
+        #menuside {
+
+            a{
                 p{
                     font-size: 20px;
                 }
-                
             }
         }
-        #movie{
-            p{
-                font-size: 60px;
-            }
-        }
+
+    }
+}
+
+@media all and (max-width: 1320px){
+
+
+    #content{
+
           #thirdholder{
             p{
-                font-size: 20px;
+                font-size: 27px;
 
             }
         }
     }
 }
+
+@media all and (max-width: 1210px){
+    #content{
+
+        #thirdholder{
+            p{
+                font-size: 22px;
+
+            }
+        }
+    }
+    
+    .big{
+        #logoside {
+
+            p{
+                font-size: 20px;
+            }
+        }
+    
+        #menuside {
+
+            a{
+                p{
+                    font-size: 20px;
+                }
+            }
+        }
+
+    }
+    .small{
+        #logoside {
+
+            p{
+                font-size: 15px;
+            }
+        }
+
+        #menuside {
+
+            a{
+                p{
+                    font-size: 15px;
+                }
+            }
+        }
+
+    }
+}
+
+@media all and (max-width: 1050px){
+
+    
+    .big{
+        #logoside {
+
+            p{
+                font-size: 18px;
+            }
+        }
+
+        #menuside {
+
+            a{
+                p{
+                    font-size: 18px;
+                }
+            }
+        }
+
+    }
+    .small{
+        #logoside {
+
+            p{
+                font-size: 12px;
+            }
+        }
+
+        #menuside {
+
+            a{
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+
+    }
+}
+//Mobile
+@media all and (max-width: 960px){
+    #wrapper {
+        display: none;
+        width: 0;
+    }
+
+    #content {
+        nav{
+
+        }
+        #movie{
+            display: none;
+            width: 0;
+        }
+
+
+
+        #secondholder {
+	       #secondtxt {
+               width: 100%;
+               p, .separator, img{
+                   opacity: 1;
+               }
+            }
+            figure{
+                display: none;
+                width: 0;
+            }
+        }
+        #thirdholder {
+            p{
+                opacity: 1;
+            }
+        }
+
+        #fourthholder {
+            figure{
+                display: none;
+                width: 0;
+            }
+	       #fourthtext {
+               width: 100%;
+               p, .separator{
+                   opacity: 1;
+               }
+            }
+        }
+
+        #fifthholder {
+	       display: none;
+        }
+    }
+
+}
+
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    opacity: 0;
+
+}
+.dot {
+    width: 20px;
+    z-index: 10;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 50%;
+    float: left;
+    margin: 0 5px;
+    @include fx;
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    -webkit-animation: fx 1000ms ease infinite 0ms;
+            animation: fx 1000ms ease infinite 0ms;
+}
+.dot:nth-child(2) {
+    @include fx;
+    -webkit-animation: fx 1000ms ease infinite 300ms;
+        animation: fx 1000ms ease infinite 300ms;
+}
+.dot:nth-child(3) {
+    @include fx;
+    -webkit-animation: fx 1000ms ease infinite 600ms;
+            animation: fx 1000ms ease infinite 600ms;
+}
+
+#categorybox{
+    float: left;
+    width: 20%;
+    height: 100%;
+    background-color: #3a2b2b;
+
+    img{
+        position: relative;
+        @include centerw;
+        height: 50px;
+        margin-top: 5px;
+    }
+
+    .category{
+        font-size: 25px;
+        margin-top: 5px;
+        position: relative;
+        height: 30px;
+
+        p{
+            width: 100%;
+            color: white;
+            height: 30px;
+            line-height: 30px;
+            font-family: Roboto;
+
+            i{
+                float: left;
+                @include clearfix;
+                color: white;
+                font-size: 16px;
+                line-height: 30px;
+                margin-left: 4px;
+                margin-right: 10px;
+            }
+
+        }
+
+        p:hover{
+            background-color: #d0b77b;
+            background-size: cover;
+            background-position: top left;
+            box-shadow: 0px 0px 6.84px 2.16px rgba(0, 0, 0, 0.83);
+        }
+    }
+
+    .menuspacer{
+        background-color: white;
+        height: 30px;
+        width: 4px;
+        position: relative;
+        margin-top: 5px;
+        left: 8px;
+    }
+}
+
+#menuholder{
+    width: 60%;
+    float: left;
+    display: none;
+}
+

@@ -9,8 +9,10 @@
         <meta name="description" content="template">
         <meta name="author" content="Dawid Dao Xuan, Denis Bąkowski, Paweł Gaczyński">
         <meta name="keywords" content="template, grafik, strona, HTML, CSS, PHP, WEB, WWW">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
         
         <!------------------------------------------------------ FONT------------------------------------------------>
     <link href='https://fonts.googleapis.com/css?family=PT+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
@@ -40,8 +42,21 @@
     
     </head>
     
+            <div id="wrapper">
+
+                <figure id="ad">
+
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <img src="img/Plakat.jpg">
+
+                </figure>
+
+            </div>
+
         <body>
             
+            <div id="wrappercolor"></div>
+
             <div id="content">
 
                 <nav>
@@ -83,7 +98,7 @@
 
                 </div>
 
-                <article id="secondholder">
+                <article class="holder" id="secondholder">
 
                     <figure>
                     </figure>
@@ -101,7 +116,7 @@
 
                 </article>
 
-                <article id="thirdholder">
+                <article class="holder" id="thirdholder">
 
                     <p>Dołożymy wszelkich starań żeby Państwa pobyt u nas wiązał się z niezapomnianymi wrażeniami.</p>
 
@@ -109,13 +124,13 @@
 
                 </article>
 
-                <article id="fourthholder">
+                <article class="holder" id="fourthholder">
 
                     <figure>
 
                     </figure>
 
-                    <article id="fourthtext">
+                    <article class="holder" id="fourthtext">
 
                         <p>Organizujemy bankiety, przyjęcia weselne, chrzciny, komunie, stypy oraz świadczymy profesjonalne usługi cateringowe.</p>
 
@@ -127,13 +142,13 @@
 
                 </article>
 
-                <figure id="fifthholder">
+                <figure class="holder" id="fifthholder">
 
 
 
                 </figure>
 
-                <article id="sixthholder">
+                <article class="holder" id="sixthholder">
 
                     <div id="map">
 
@@ -143,17 +158,40 @@
 
                     <div id="sixthtext">
                         <div id="centerform">
-                            <form action="send.php" method="post">
+
+                            <div id="form">
+                                <h4></h4>
+                                <div class="input-group">
+                                    <span class="input-group-addon"> <i class="fa fa-user fa-fw" aria-hidden="true"></i> </span>
+                                    <input id="name" type="text" name="name" placeholder="Imię i nazwisko" required="required"> <br>
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon"> <i class="fa fa-phone fa-fw" aria-hidden="true"></i> </span>
+                                    <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="phone" type="tel" name="phone" maxlength="14" placeholder="W formacie 123456789" required="required"> <br>
+                                </div>
+
+                                <div class="input-group">
+                                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+                                    <input id="email" type="email" name="email" placeholder="Na przykład example@example.com" required="required"> <br>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-commenting fa-fw" aria-hidden="true"></i></span>
+                                    <textarea id="message" rows="5" name="message" columns="10" placeholder="Treść wiadomości"  required="required" tabindex="3"></textarea><br>
+                                </div>
+
+                                    <input id="submit" type="submit" name="submit" value="Wyślij">
 
 
 
-                                <input type="text" placeholder="Imię i nazwisko" required="required"> <br>
-                                <input type="tel" maxlength="12" placeholder="Numer telefonu" required="required"> <br>
-                                <input type="email" placeholder="E-mail" required="required"> <br>
-                                <textarea rows="5" columns="10" name="contact_body" placeholder="Treść wiadomości"  required="required" tabindex="3"></textarea><br>
-                                <input type="submit" value="Wyślij">
+                            </div>
 
-                            </form>
+                            <div class="container">
+                                 <div class="dot"></div>
+                                 <div class="dot"></div>
+                                 <div class="dot"></div>
+                            </div>
+
                         </div>
                         
                         <div id="space"></div>        
@@ -171,22 +209,27 @@
         </div>
         
         <a href="http://blingstudio.pl/">
-            <footer>
+             <footer>
                 <div id="footerholder">
                 
                     <img src="img/logosd.png">
 
                     <p>Copyright © 2016 Bling Studio WEB. All rights reserved.</p>
-                    
-                </div>
-                    
+
+                 </div>
             </footer>
         </a>
+            <div id="menuside">
+
+
+
+                    </div>
     
         <!------------------------- JS -------------------------> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/js.js"></script>
             
+
     </body>
 
 </html>

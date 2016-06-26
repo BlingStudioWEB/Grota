@@ -14,96 +14,6 @@
     transform: translatex(-50%);
 }
 
-@mixin biganim(){
-    @keyframes biganim {
-        from {  
-            background-color: rgba(48,48,48,1);
-            height: 100px;
-
-
-        }
-        to {
-            background-color: rgba(48,48,48,0);
-            height: 200px;
-        }
-    }
-}
-
-@mixin smallanim(){
-    @keyframes smallanim {
-        from {  
-            background-color: rgba(48,48,48,0);
-            height: 200px;
-
-
-        }
-        to {
-            background-color: rgba(48,48,48,1);
-            height: 100px;
-        }
-    }
-}
-
-@mixin menuPsmall(){
-    @keyframes menuPsmall {
-        from {  
-            font-size: 30px;
-            line-height: 200px;
-
-
-        }
-        to {
-            font-size: 20px;
-            line-height: 100px;
-        }
-    }
-}
-
-@mixin logoPsmall(){
-    @keyframes logoPsmall {
-        from {  
-            font-size: 30px;
-
-
-
-        }
-        to {
-            font-size: 20px;
-
-        }
-    }
-}
-
-@mixin menuPbig(){
-    @keyframes menuPbig {
-        from {  
-            font-size: 20px;
-            line-height: 100px;
-
-
-        }
-        to {
-            font-size: 30px;
-            line-height: 200px;
-        }
-    }
-}
-
-@mixin logoPbig(){
-    @keyframes logoPbig {
-        from {  
-            font-size: 20px;
-
-
-
-        }
-        to {
-            font-size: 30px;
-
-        }
-    }
-}
-
 @mixin mottohide(){
     @keyframes mottohide {
         from {  
@@ -188,5 +98,58 @@
             transform: translateX(0%);
             opacity: 1;
         }
+    }
+}
+
+@mixin formanim(){
+    @keyframes formanim {
+        0% {
+            opacity: 0;
+
+        }
+        80%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+}
+
+@mixin loading(){
+    @keyframes loading {
+        0% {
+            opacity: 0;
+
+        }
+        50% {
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+        }
+    }
+}
+
+@mixin fx{
+    @-webkit-keyframes fx {
+        50% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            opacity: 1;
+      }
+      100% {
+            opacity: 0;
+      }
+    }
+    @keyframes fx {
+      50% {
+            -webkit-transform: scale(1);
+                    transform: scale(1);
+            opacity: 1;
+      }
+      100% {
+            opacity: 0;
+      }
     }
 }

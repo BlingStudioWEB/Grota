@@ -1,5 +1,8 @@
 * {
-  margin: 0; }
+  margin: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out; }
 
 a {
   color: white;
@@ -8,75 +11,39 @@ a {
 .small {
   height: 100px;
   background-color: #303030;
-  animation-name: smallanim;
-  animation-duration: 0.2s;
-  animation-timing-function: ease-in; }
-@keyframes smallanim {
-  from {
-    background-color: rgba(48, 48, 48, 0);
-    height: 200px; }
-  to {
-    background-color: #303030;
-    height: 100px; } }
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
   .small #logoside p {
     font-size: 20px;
-    animation-name: logoPsmall;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in; }
-@keyframes logoPsmall {
-  from {
-    font-size: 30px; }
-  to {
-    font-size: 20px; } }
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
   .small #menuside a p {
     line-height: 100px;
     font-size: 20px;
-    animation-name: menuPsmall;
-    animation-duration: 0.2s;
-    animation-timing-function: ease-in; }
-@keyframes menuPsmall {
-  from {
-    font-size: 30px;
-    line-height: 200px; }
-  to {
-    font-size: 20px;
-    line-height: 100px; } }
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
+
 .big {
   height: 200px;
   background-color: rgba(48, 48, 48, 0);
-  animation-name: biganim;
-  animation-duration: 0.1s;
-  animation-timing-function: ease-in; }
-@keyframes biganim {
-  from {
-    background-color: #303030;
-    height: 100px; }
-  to {
-    background-color: rgba(48, 48, 48, 0);
-    height: 200px; } }
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
   .big #logoside p {
     font-size: 30px;
-    animation-name: logoPbig;
-    animation-duration: 0.1s;
-    animation-timing-function: ease-in; }
-@keyframes logoPbig {
-  from {
-    font-size: 20px; }
-  to {
-    font-size: 30px; } }
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
   .big #menuside a p {
     line-height: 200px;
     font-size: 30px;
-    animation-name: menuPbig;
-    animation-duration: 0.1s;
-    animation-timing-function: ease-in; }
-@keyframes menuPbig {
-  from {
-    font-size: 20px;
-    line-height: 100px; }
-  to {
-    font-size: 30px;
-    line-height: 200px; } }
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out; }
+
 .mottohide {
   opacity: 0;
   animation-name: mottohide;
@@ -141,13 +108,43 @@ a {
   to {
     transform: translateX(0%);
     opacity: 1; } }
+.formanim {
+  animation-name: formanim;
+  animation-duration: 4s;
+  animation-timing-function: linear; }
+@keyframes formanim {
+  0% {
+    opacity: 0; }
+  80% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+.loading {
+  animation-name: loading;
+  animation-duration: 3s;
+  animation-timing-function: linear; }
+@keyframes loading {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
 body {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  width: 100%; }
+
+.holder {
+  width: 100%;
+  height: 760px;
+  position: relative; }
 
 #content {
   z-index: 2;
   position: absolute;
-  margin-bottom: 100px; }
+  margin-bottom: 70px;
+  width: 100%;
+  overflow: hidden; }
 
 .separator {
   width: 60%;
@@ -184,14 +181,19 @@ nav {
       position: relative;
       top: 50%;
       transform: translatey(-50%); }
-    nav #logoside img {
-      height: 100%;
-      position: relative;
-      float: left; }
-      nav #logoside img::after {
+      nav #logoside p::after {
         clear: both;
         content: "";
         display: table; }
+    nav #logoside img {
+      width: auto;
+      height: auto;
+      top: 50%;
+      transform: translatey(-50%);
+      position: relative;
+      float: left;
+      max-height: 100%;
+      max-width: 50%; }
   nav #menuside {
     width: 70%;
     height: 100%;
@@ -202,31 +204,34 @@ nav {
       display: table; }
     nav #menuside a {
       color: #fff;
-      text-decoration: none;
-      font-family: 'Roboto', sans-serif;
-      font-weight: 600;
-      position: relative; }
+      text-decoration: none; }
       nav #menuside a p {
         font-size: 40px;
-        width: 24.7%;
+        width: 25%;
         text-align: center;
         line-height: 150px;
         font-family: 'Roboto', sans-serif;
+        font-weight: 600;
         position: relative;
-        display: inline-block; }
+        float: left; }
+        nav #menuside a p::after {
+          clear: both;
+          content: "";
+          display: table; }
 
 #movie {
-  width: 100vw;
   height: 100vh;
-  position: relative;
-  overflow: hidden; }
+  width: 100%;
+  position: relative; }
   #movie video {
     height: auto;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: auto;
     min-height: 100%;
-    min-width: 100%;
-    z-index: 1; }
+    min-width: 100%; }
   #movie p {
     position: absolute;
     z-index: 2;
@@ -236,67 +241,58 @@ nav {
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 80px;
-    width: 100%;
+    width: 90%;
     text-align: center; }
 
-#secondholder {
-  width: 100%;
-  height: 759px; }
-  #secondholder figure {
-    width: 50%;
-    height: 100%;
-    float: left;
+#secondholder figure {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  background-image: url(../img/kitchen.jpg);
+  background-size: cover; }
+#secondholder #secondtxt {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  float: left;
+  z-index: 2;
+  background-color: #f8dcc1; }
+  #secondholder #secondtxt::after {
+    clear: both;
+    content: "";
+    display: table; }
+  #secondholder #secondtxt p {
+    padding-top: 300px;
+    font-family: 'Croissant One';
+    height: 200px;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 32px;
+    opacity: 0;
+    color: black; }
+  #secondholder #secondtxt img {
+    height: 82px;
     position: relative;
-    background-image: url(../img/kitchen.jpg);
-    background-size: cover; }
-    #secondholder figure img {
-      height: 100%;
-      width: 100%; }
-  #secondholder #secondtxt {
-    width: 50%;
-    height: 100%;
-    position: relative;
-    float: left;
-    z-index: 2;
-    background-color: white; }
-    #secondholder #secondtxt::after {
-      clear: both;
-      content: "";
-      display: table; }
-    #secondholder #secondtxt p {
-      padding-top: 300px;
-      font-family: 'PT Serif', serif;
-      height: 200px;
-      text-align: center;
-      display: table-cell;
-      vertical-align: middle;
-      font-size: 25px;
-      opacity: 0; }
-    #secondholder #secondtxt img {
-      height: 82px;
-      position: relative;
-      left: 50%;
-      transform: translatex(-50%);
-      top: 10px;
-      opacity: 0; }
+    left: 50%;
+    transform: translatex(-50%);
+    top: 10px;
+    opacity: 0; }
 
 #thirdholder {
-  width: 100%;
-  height: 760px;
-  position: relative;
-  background-color: #f8dcc1; }
+  background-color: #271515; }
   #thirdholder p {
     text-align: center;
     position: relative;
     line-height: 760px;
-    font-size: 35px;
+    font-size: 39px;
     opacity: 0;
-    font-family: 'PT Serif', serif; }
+    font-family: 'PT Serif', serif;
+    color: white; }
 
 #fourthholder {
-  width: 100%;
-  height: 760px;
-  background-color: white; }
+  background-color: #f8dcc1; }
   #fourthholder figure {
     width: 30%;
     height: 100%;
@@ -317,25 +313,22 @@ nav {
       vertical-align: middle;
       position: relative;
       text-align: center;
-      font-size: 23px;
+      font-size: 35px;
       opacity: 0;
       padding-left: 5%;
-      padding-right: 5%; }
+      padding-right: 5%;
+      color: black; }
     #fourthholder #fourthtext p:first-of-type {
       padding-top: 77px; }
 
 #fifthholder {
   background-image: url(../img/miseczki.jpg);
   background-size: cover;
-  width: 100%;
   height: 600px;
   background-attachment: fixed;
   font-family: 'PT Serif', serif; }
 
 #sixthholder {
-  width: 100%;
-  height: 760px;
-  position: relative;
   background-color: #424241; }
   #sixthholder #map {
     position: relative;
@@ -393,24 +386,63 @@ nav {
         clear: both;
         content: "";
         display: table; }
-      #sixthholder #sixthtext #centerform form {
-        width: 100%;
-        height: auto;
+      #sixthholder #sixthtext #centerform h2 {
+        position: absolute;
+        left: 50%;
         top: 50%;
-        transform: translatey(-50%);
-        position: absolute; }
-        #sixthholder #sixthtext #centerform form p {
-          margin-top: 200px; }
-        #sixthholder #sixthtext #centerform form input, #sixthholder #sixthtext #centerform form textarea {
-          width: 60%; }
-        #sixthholder #sixthtext #centerform form input:last-of-type {
-          width: 20%;
-          height: 30px; }
-        #sixthholder #sixthtext #centerform form textarea {
-          margin-top: 50px; }
+        transform: translate(-50%, -50%);
+        font-size: 30px; }
+      #sixthholder #sixthtext #centerform #form {
+        width: 70%;
+        height: auto;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        font-family: 'Roboto', sans-serif; }
+        #sixthholder #sixthtext #centerform #form h4 {
+          color: yellow;
+          margin-bottom: 10px;
+          font-size: 20px; }
+        #sixthholder #sixthtext #centerform #form .input-group:last-of-type {
+          height: 100px; }
+        #sixthholder #sixthtext #centerform #form .input-group {
+          margin-bottom: 10px;
+          height: 40px;
+          background-color: #363636;
+          overflow: hidden;
+          border-radius: 10px 0 0 10px; }
+          #sixthholder #sixthtext #centerform #form .input-group input, #sixthholder #sixthtext #centerform #form .input-group textarea, #sixthholder #sixthtext #centerform #form .input-group input:focus, #sixthholder #sixthtext #centerform #form .input-group textarea:focus {
+            width: 87%;
+            margin-left: 2%;
+            float: left;
+            position: relative;
+            top: 50%;
+            transform: translatey(-50%);
+            background-color: #363636;
+            border: 0;
+            color: #969696;
+            resize: none;
+            outline: none; }
+            #sixthholder #sixthtext #centerform #form .input-group input::after, #sixthholder #sixthtext #centerform #form .input-group textarea::after, #sixthholder #sixthtext #centerform #form .input-group input:focus::after, #sixthholder #sixthtext #centerform #form .input-group textarea:focus::after {
+              clear: both;
+              content: "";
+              display: table; }
+          #sixthholder #sixthtext #centerform #form .input-group span {
+            width: 10%;
+            height: 100%;
+            position: relative;
+            float: left;
+            background-color: #303030; }
+        #sixthholder #sixthtext #centerform #form #submit {
+          width: 100%;
+          border: 0;
+          height: 40px;
+          background-color: #363636;
+          color: #969696; }
 
 footer {
-  height: 100px;
+  height: 70px;
   position: fixed;
   background-color: #303030;
   bottom: 0;
@@ -418,16 +450,17 @@ footer {
   z-index: 1; }
   footer #footerholder {
     height: 100%;
-    width: 500px;
+    width: 600px;
     position: relative;
+    float: left;
     left: 50%;
     transform: translatex(-50%); }
     footer #footerholder img {
-      height: 100%;
+      height: 90%;
       float: left; }
     footer #footerholder p {
       float: left;
-      line-height: 100px;
+      line-height: 75px;
       font-family: 'Roboto', sans-serif;
       font-weight: 400; }
       footer #footerholder p::after {
@@ -435,37 +468,220 @@ footer {
         content: "";
         display: table; }
 
-@media all and (max-width: 1440px) {
+#wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 9999;
+  background-color: rgba(38, 38, 36, 0.9); }
+  #wrapper figure {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; }
+    #wrapper figure img {
+      width: 100%; }
+    #wrapper figure i {
+      color: white;
+      position: absolute;
+      right: 0;
+      font-size: 20px; }
+
+#wrappercolor {
+  background-color: rgba(38, 38, 36, 0.9);
+  z-index: 9999;
+  position: absolute; }
+
+@media all and (max-width: 1720px) {
   #content #thirdholder p {
-    font-size: 31px; } }
-@media all and (max-width: 1426px) {
-  #content #logoside p {
-    font-size: 25px;
-    width: 25%; }
-  #content #menuside a p {
-    font-size: 20px;
-    width: 22.7%; }
+    font-size: 35px; } }
+@media all and (max-width: 1520px) {
   #content #secondholder #secondtxt p {
-    font-size: 20px; }
-  #content #movie p {
-    font-size: 60px; }
+    font-size: 29px; }
   #content #thirdholder p {
     font-size: 30px; } }
-@media all and (max-width: 1280px) {
-  #content #thirdholder p {
-    font-size: 25px; } }
-@media all and (max-width: 1024px) {
-  #content #logoside p {
-    font-size: 20px;
-    width: 12.5%; }
-  #content #menuside a p {
-    font-size: 15px;
-    width: 23%; }
-  #content #secondholder #secondtxt p {
+@media all and (max-width: 1450px) {
+  .big #logoside p {
+    font-size: 25px; }
+  .big #menuside a p {
+    font-size: 25px; }
+
+  .small #logoside p {
     font-size: 20px; }
-  #content #movie p {
-    font-size: 60px; }
-  #content #thirdholder p {
+  .small #menuside a p {
     font-size: 20px; } }
+@media all and (max-width: 1320px) {
+  #content #thirdholder p {
+    font-size: 27px; } }
+@media all and (max-width: 1210px) {
+  #content #thirdholder p {
+    font-size: 22px; }
+
+  .big #logoside p {
+    font-size: 20px; }
+  .big #menuside a p {
+    font-size: 20px; }
+
+  .small #logoside p {
+    font-size: 15px; }
+  .small #menuside a p {
+    font-size: 15px; } }
+@media all and (max-width: 1050px) {
+  .big #logoside p {
+    font-size: 18px; }
+  .big #menuside a p {
+    font-size: 18px; }
+
+  .small #logoside p {
+    font-size: 12px; }
+  .small #menuside a p {
+    font-size: 12px; } }
+@media all and (max-width: 960px) {
+  #wrapper {
+    display: none;
+    width: 0; }
+
+  #content #movie {
+    display: none;
+    width: 0; }
+  #content #secondholder #secondtxt {
+    width: 100%; }
+    #content #secondholder #secondtxt p, #content #secondholder #secondtxt .separator, #content #secondholder #secondtxt img {
+      opacity: 1; }
+  #content #secondholder figure {
+    display: none;
+    width: 0; }
+  #content #thirdholder p {
+    opacity: 1; }
+  #content #fourthholder figure {
+    display: none;
+    width: 0; }
+  #content #fourthholder #fourthtext {
+    width: 100%; }
+    #content #fourthholder #fourthtext p, #content #fourthholder #fourthtext .separator {
+      opacity: 1; }
+  #content #fifthholder {
+    display: none; } }
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 0; }
+
+.dot {
+  width: 20px;
+  z-index: 10;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  float: left;
+  margin: 0 5px;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation: fx 1000ms ease infinite 0ms;
+  animation: fx 1000ms ease infinite 0ms; }
+@-webkit-keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.dot:nth-child(2) {
+  -webkit-animation: fx 1000ms ease infinite 300ms;
+  animation: fx 1000ms ease infinite 300ms; }
+@-webkit-keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+.dot:nth-child(3) {
+  -webkit-animation: fx 1000ms ease infinite 600ms;
+  animation: fx 1000ms ease infinite 600ms; }
+@-webkit-keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+@keyframes fx {
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+#categorybox {
+  float: left;
+  width: 20%;
+  height: 100%;
+  background-color: #3a2b2b; }
+  #categorybox img {
+    position: relative;
+    left: 50%;
+    transform: translatex(-50%);
+    height: 50px;
+    margin-top: 5px; }
+  #categorybox .category {
+    font-size: 25px;
+    margin-top: 5px;
+    position: relative;
+    height: 30px; }
+    #categorybox .category p {
+      width: 100%;
+      color: white;
+      height: 30px;
+      line-height: 30px;
+      font-family: Roboto; }
+      #categorybox .category p i {
+        float: left;
+        color: white;
+        font-size: 16px;
+        line-height: 30px;
+        margin-left: 4px;
+        margin-right: 10px; }
+        #categorybox .category p i::after {
+          clear: both;
+          content: "";
+          display: table; }
+    #categorybox .category p:hover {
+      background-color: #d0b77b;
+      background-size: cover;
+      background-position: top left;
+      box-shadow: 0px 0px 6.84px 2.16px rgba(0, 0, 0, 0.83); }
+  #categorybox .menuspacer {
+    background-color: white;
+    height: 30px;
+    width: 4px;
+    position: relative;
+    margin-top: 5px;
+    left: 8px; }
+
+#menuholder {
+  width: 60%;
+  float: left;
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */
