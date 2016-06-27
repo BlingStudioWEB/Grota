@@ -17,6 +17,7 @@ a{
     height: 100px;
     background-color: rgba(48,48,48,1);
     @include transition(all 0.2s ease-in-out);
+    box-shadow: 0 0px 6px #000;
     
     #logoside {
     
@@ -269,8 +270,8 @@ nav{
         float: left;
         @include clearfix;
         z-index: 2;
-        background-color: #f8dcc1;
-        
+        //background-color: #f8dcc1;
+        background-image: url(../img/bg.png);
         
         p{
             padding-top: 300px;
@@ -313,7 +314,7 @@ nav{
 }
 
 #fourthholder{
-    background-color: #f8dcc1;
+    background-image: url(../img/bg.png);
     
     figure{
         width: 30%;
@@ -384,6 +385,16 @@ nav{
         font-family: 'Roboto', sans-serif; 
         font-weight: 400;
         
+        h3{
+            width: 50%;
+            float: left;
+            @include clearfix;
+            margin-top: 50px;
+            margin-bottom: -80px;
+            font-size: 40px;
+            height: 50px;
+        }
+
             #pbox{
                 @include centerh;
                 position: relative;
@@ -452,12 +463,11 @@ nav{
 
 
                     input, textarea, input:focus, textarea:focus{
-                        width: 87%;
+                        width: 86%;
                         margin-left: 2%;
                         float: left;
                         position: relative;
                         @include centerh;
-                        @include clearfix;
                         background-color: #363636;
                         border: 0;
                         color:#969696;
@@ -465,12 +475,22 @@ nav{
                         outline: none;
                     }
 
+                    textarea{
+                        margin: 3px -1px;
+                        padding: 0;
+                    }
+
                     span{
-                        width: 10%;
+                        width: 12%;
                         height: 100%;
                         position: relative;
                         float: left;
                         background-color: #303030;
+                        img{
+                            width: 70%;
+                            max-height: 100%;
+                            height: auto;
+                        }
                     }
 
                 }
@@ -481,6 +501,7 @@ nav{
                     height: 40px;
                     background-color: #363636;
                     color: #969696;
+                    @include clearfix;
                 }
 
             }
@@ -536,11 +557,12 @@ footer{
         img{
               width: 100%;
             }
-        i{
-            color: white;
+        #close{
+
             position: absolute;
-            right: 0;
-            font-size: 20px;
+            right: 10px;
+            top: 10px;
+            width: 40px;
 
         }
      }
@@ -821,65 +843,6 @@ footer{
             animation: fx 1000ms ease infinite 600ms;
 }
 
-#categorybox{
-    float: left;
-    width: 20%;
-    height: 100%;
-    background-color: #3a2b2b;
 
-    img{
-        position: relative;
-        @include centerw;
-        height: 50px;
-        margin-top: 5px;
-    }
 
-    .category{
-        font-size: 25px;
-        margin-top: 5px;
-        position: relative;
-        height: 30px;
-
-        p{
-            width: 100%;
-            color: white;
-            height: 30px;
-            line-height: 30px;
-            font-family: Roboto;
-
-            i{
-                float: left;
-                @include clearfix;
-                color: white;
-                font-size: 16px;
-                line-height: 30px;
-                margin-left: 4px;
-                margin-right: 10px;
-            }
-
-        }
-
-        p:hover{
-            background-color: #d0b77b;
-            background-size: cover;
-            background-position: top left;
-            box-shadow: 0px 0px 6.84px 2.16px rgba(0, 0, 0, 0.83);
-        }
-    }
-
-    .menuspacer{
-        background-color: white;
-        height: 30px;
-        width: 4px;
-        position: relative;
-        margin-top: 5px;
-        left: 8px;
-    }
-}
-
-#menuholder{
-    width: 60%;
-    float: left;
-    display: none;
-}
 

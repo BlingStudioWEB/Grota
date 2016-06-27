@@ -31,8 +31,9 @@ $(function() {
         }
     
     //Closing Pop-up
-    $("i").click(function(){
+    $("#wrapper").click(function(){
         $("#wrapper").css({"display":"none"});
+        $("body").css({"overflow":"visible"});
     });
 
     //Scrolling Effects

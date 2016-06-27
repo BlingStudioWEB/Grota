@@ -13,8 +13,9 @@
         
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/font-awesome.min.css">
+        <style> body{ overflow:hidden; } </style>
         
-        <!------------------------------------------------------ FONT------------------------------------------------>
+        <!-- ---------------------------------------------------- FONT---------------------------------------------- -->
     <link href='https://fonts.googleapis.com/css?family=PT+Serif&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <style>
 
@@ -48,7 +49,8 @@
 
                 <figure id="ad">
 
-                    <i class="fa fa-times" aria-hidden="true"></i>
+
+                    <img id="close" src="img/cancel.svg" alt="Close">
                     <img src="img/Plakat.jpg" alt="Reklama imprezy">
 
                 </figure>
@@ -157,26 +159,28 @@
                     </div>
 
                     <div id="sixthtext">
+                        <h3>Skontaktuj się z nami</h3>
+                        <h3>Jak do nas dojechać</h3>
                         <div id="centerform">
 
                             <div id="form">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> <i class="fa fa-user fa-fw" aria-hidden="true"></i> </span>
+                                    <span><img src="img/business.svg"></span>
                                     <input id="name" type="text" name="name" placeholder="Imię i nazwisko" required="required"> <br>
                                 </div>
 
                                 <div class="input-group">
-                                    <span class="input-group-addon"> <i class="fa fa-phone fa-fw" aria-hidden="true"></i> </span>
+                                    <span><img src="img/smartphone.svg"></span>
                                     <input onkeypress='return event.charCode >= 48 && event.charCode <= 57' id="phone" type="tel" name="phone" maxlength="14" placeholder="W formacie 123456789" required="required"> <br>
                                 </div>
 
                                 <div class="input-group">
-                                     <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+                                     <span><img src="img/email.svg"><img src="img/business.svg"></span>
                                     <input id="email" type="email" name="email" placeholder="Na przykład example@example.com" required="required"> <br>
                                 </div>
                                 <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-commenting fa-fw" aria-hidden="true"></i></span>
-                                    <textarea id="message" rows="5" name="message" placeholder="Treść wiadomości"  required="required" tabindex="3"></textarea><br>
+                                    <span><img src="img/interface.svg"></span>
+                                    <textarea id="message" rows="5" name="message" placeholder="Treść wiadomości"  required="required"></textarea><br>
                                 </div>
 
                                     <input id="submit" type="submit" name="submit" value="Wyślij">
@@ -193,7 +197,8 @@
 
                         </div>
                         
-                        <div id="space"></div>        
+                        <div id="space"></div>
+
                 
                         <div id="pbox">
                             <p>Restauracja Grota</p><br>
@@ -219,7 +224,7 @@
             </footer>
         </a>
     
-        <!------------------------- JS -------------------------> 
+        <!-- ----------------------- JS ----------------------- -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/js.js"></script>
             
