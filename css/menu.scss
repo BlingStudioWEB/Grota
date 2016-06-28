@@ -1,8 +1,14 @@
 @import "mixins";
 @import "../bourbon/bourbon";
 
+nav{
+    margin-top: -100px;
+}
+
 #menutop{
     background-image: url(../img/bg.png);
+    margin-top: 100px;
+
     h3,h4{
         position: relative;
         width: 90%;
@@ -21,8 +27,6 @@
 
     h4{
         padding-top: 0;
-        font-size: 25px;
-        line-height: 50px;
     }
     img{
         position: relative;
@@ -57,14 +61,17 @@
             line-height: 30px;
             font-family: Roboto;
 
-            i{
+            img{
                 float: left;
+                position: relative;
                 @include clearfix;
-                color: white;
-                font-size: 8px;
-                line-height: 30px;
-                margin-left: 4px;
+                width: 10px;
+                height: 10px;
+                margin: 0;
                 margin-right: 10px;
+                margin-left: 2.5px;
+                @include centerh;
+                left: 0;
             }
 
         }

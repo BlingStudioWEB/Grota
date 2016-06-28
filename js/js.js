@@ -2,18 +2,21 @@ $(function() {
     //Name Spaces
     var nav = $("nav");
     var movieP = $("#movie p");
-    var secondtxtP= $("#secondtxt p");
-    var secondtxtSep= $("#secondtxt .separator");
-    var secondtxtImg= $("#secondtxt img");
-    var secondholder= $("#secondholder");
-    var thirdholder= $("#thirdholder");
-    var fourthholder= $("#fourthholder");
-    var namebox= $("#name");
+    var secondtxtP = $("#secondtxt p");
+    var secondtxtSep = $("#secondtxt .separator");
+    var secondtxtImg = $("#secondtxt img");
+    var secondholder = $("#secondholder");
+    var thirdholder = $("#thirdholder");
+    var fourthholder = $("#fourthholder");
+    var namebox = $("#name");
+    var menu = $("#menubutton");
+    var menuside = $("#menuside");
+
     //Vars
     var vh = $(window).height();
     var vw = $(window).width();
+    var menutoggle = false;
 
-    event.charCode
     //Wartości startowe
     $(nav).addClass("big").removeClass("small");
     $(movieP).addClass("mottoshow").removeClass("mottohide");
@@ -24,16 +27,32 @@ $(function() {
         if(vw<=960){
             $(nav).addClass("small").removeClass("big");
         }
+        else{
+            menutoggle = false;
+            $(menuside).css({"transform":"translatex(0%)"});
+        }
     })
     
     if(vw<=960){
             $(nav).addClass("small").removeClass("big");
+    }
+
+    //Showing and closing menu
+    $("#menubutton").click(function(){
+        if(menutoggle == false){
+            $(menuside).css({"transform":"translatex(0%)"});
+            menutoggle = true;
         }
+        else{
+            $(menuside).css({"transform":"translatex(-100%)"});
+            menutoggle = false;
+        }
+    })
     
     //Closing Pop-up
     $("#wrapper").click(function(){
         $("#wrapper").css({"display":"none"});
-        $("body").css({"overflow":"visible"});
+        //$("body").css({"overflow":"visible"});
     });
 
     //Scrolling Effects
